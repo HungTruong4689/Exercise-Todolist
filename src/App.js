@@ -1,9 +1,9 @@
 
 import './App.css';
 import React, {useState} from 'react';
-import Card from 'react-bootstrap/Card';
+
 import TodoItem from './TodoItem';
-import Alert from 'react-bootstrap/Alert';
+
 
 import AddNewItem from './AddNewItem';
 import Footer from './Footer';
