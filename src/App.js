@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import React, {useState} from 'react';
+import Card from 'react-bootstrap/Card';
+import TodoItem from './TodoItem';
+import Alert from 'react-bootstrap/Alert';
+
+import AddNewItem from './AddNewItem';
+import Footer from './Footer';
 function App() {
+  const [todoList, settodoList] = useState([]);
+  const addTodoHandler = (uTitle,uDeadline,uStatus) =>{
+
+    //Child key error
+    settodoList((pretodolist) =>{
+      return [...pretodolist, {title:uTitle, deadline:uDeadline, status: uStatus, id:Math.random().toString()}]
+    });
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <AddNewItem onAddTodolist={addTodoHandler}/>
+      
+      
+        {todoList.map(item => (<TodoItem title={item.title} deadline={item.deadline} key={item.id} status={item.status} />))}
+      
+      
+      
+      <Footer/>
     </div>
   );
 }

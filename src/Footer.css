@@ -1,0 +1,32 @@
+.boxfooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text{
+    padding: 0 20px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+}
+.alert{
+    width: 10px;
+    height: 80px;
+}
+
+.footer-item {
+    width: 20px;
+    height: 80px;
+   
+}
+
+.success{
+    background-color: green;
+}
+.danger{
+    background-color: red;
+}
+.warning{
+    background-color: yellow;
+}
